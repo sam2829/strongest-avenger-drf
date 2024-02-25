@@ -27,6 +27,7 @@ class ProfileDetail(APIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
+    # check object exists
     def get_object(self, pk):
         try:
             profile = Profile.objects.get(pk=pk)
@@ -35,6 +36,7 @@ class ProfileDetail(APIView):
         except Profile.DoesNotExist:
             raise Http404
 
+    # get profile
     def get(self, request, pk):
         profile = self.get_object(pk)
         serializer = ProfileSerializer(
@@ -42,6 +44,7 @@ class ProfileDetail(APIView):
         )
         return Response(serializer.data)
 
+    # edit profile
     def put(self, request, pk):
         profile = self.get_object(pk)
         serializer = ProfileSerializer(
