@@ -50,7 +50,9 @@ class Posts(models.Model):
 
     def save(self, *args, **kwargs):
         if self.image and self.video:
-            raise ValueError("Only one media is allowed: either image or video.")
+            raise ValueError(
+                "Only one media file is allowed: either image or video."
+            )
         super().save(*args, **kwargs)
 
 
