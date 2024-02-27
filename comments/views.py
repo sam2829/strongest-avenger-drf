@@ -15,6 +15,7 @@ class CommentList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     this class is to be able to retirve comment by id,
