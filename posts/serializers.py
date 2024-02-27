@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Posts
 from moviepy.editor import VideoFileClip
 from PIL import Image
+from likes.models import Like
 
 
 class PostsSerializer(serializers.ModelSerializer):
@@ -12,6 +13,7 @@ class PostsSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    like_id = serializers.SerializerMethodField()
 
     # Check one of the image or video files have been uploaded,
     # also check both havnt been uploaded
@@ -87,10 +89,19 @@ class PostsSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
+    def get_like_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = Like.objects.filter(
+                owner=user, post=obj
+            ).first()
+            return like.id if like else None
+        return None
+
     class Meta:
         model = Posts
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'character_name',
             'character_category', 'title', 'content', 'image', 'video',
-            'is_owner', 'profile_id', 'profile_image'
+            'is_owner', 'profile_id', 'profile_image', 'like_id'
         ]
