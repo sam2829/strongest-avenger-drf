@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Comments
+from .models import Comment, Posts
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -16,7 +16,7 @@ class CommentSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Posts
+        model = Comment
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'post',
             'content', 'agree','is_owner', 'profile_id',
