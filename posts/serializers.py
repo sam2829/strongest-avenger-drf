@@ -14,6 +14,8 @@ class PostsSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     like_id = serializers.SerializerMethodField()
+    comments_count = serializers.ReadOnlyField()
+    likes_count = serializers.ReadOnlyField()
 
     # Check one of the image or video files have been uploaded,
     # also check both havnt been uploaded
@@ -103,5 +105,6 @@ class PostsSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'character_name',
             'character_category', 'title', 'content', 'image', 'video',
-            'is_owner', 'profile_id', 'profile_image', 'like_id'
+            'is_owner', 'profile_id', 'profile_image', 'like_id',
+            'comments_count', 'likes_count'
         ]
