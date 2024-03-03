@@ -24,7 +24,7 @@ class Report(models.Model):
     resolved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-resolved', '-created_at']
+        ordering = ['resolved', '-created_at']
 
     def __str__(self):
         return f'{self.reason} {self.description}'
