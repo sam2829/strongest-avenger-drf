@@ -79,7 +79,7 @@ class PostDetailViewTests(APITestCase):
     # create a image for testing
     def generate_image(self):
         file = io.BytesIO()
-        image = Image.new('RGBA', size=(100, 100), color=(0, 255, 0, 255))  # Green color with full opacity
+        image = Image.new('RGBA', size=(100, 100), color=(0, 255, 0, 255))
         image.save(file, 'png')
         file.name = 'test.png'
         file.seek(0)
