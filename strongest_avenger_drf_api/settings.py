@@ -63,7 +63,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    'localhost','8000-sam2829-strongestavenge-igozhq1ys7p.ws-eu108.gitpod.io'
+    'localhost','https://strongest-avenger-drf-api-c57eb1c3e676.herokuapp.com/'
 ]
 
 
