@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Posts
-from moviepy.editor import VideoFileClip
+#from moviepy.editor import VideoFileClip
 from PIL import Image
 from likes.models import Like
 
@@ -69,23 +69,23 @@ class PostsSerializer(serializers.ModelSerializer):
             return value
 
     #validate video file uploaded
-    def validate_video(self, value):
+    # def validate_video(self, value):
 
-        if value:
-            try:
-                video_clip = VideoFileClip(value.temporary_file_path())
-                duration = video_clip.duration
+    #     if value:
+    #         try:
+    #             video_clip = VideoFileClip(value.temporary_file_path())
+    #             duration = video_clip.duration
 
-                if duration > 120:
-                    raise serializers.ValidationError(
-                        'Video duration should be less than 120 seconds.'
-                    )
-            except Exception as e:
-                raise serializers.ValidationError(
-                    'Error processing the video file.'
-                )
+    #             if duration > 120:
+    #                 raise serializers.ValidationError(
+    #                     'Video duration should be less than 120 seconds.'
+    #                 )
+    #         except Exception as e:
+    #             raise serializers.ValidationError(
+    #                 'Error processing the video file.'
+    #             )
 
-        return value
+    #     return value
 
     def get_is_owner(self, obj):
         request = self.context['request']
