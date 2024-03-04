@@ -1,13 +1,16 @@
 asgiref==3.7.2
 cloudinary==1.38.0
 decorator==4.4.2
+dj-database-url==0.5.0
 dj-rest-auth==2.1.9
 Django==3.2.24
 django-allauth==0.44.0
 django-cloudinary-storage==0.3.0
+django-cors-headers==4.3.1
 django-filter==23.5
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
+gunicorn==21.2.0
 imageio==2.34.0
 imageio-ffmpeg==0.4.9
 moviepy==1.0.3
@@ -15,6 +18,7 @@ numpy==1.26.4
 oauthlib==3.2.2
 pillow==10.2.0
 proglog==0.1.10
+psycopg2==2.9.9
 PyJWT==2.8.0
 python-magic==0.4.27
 python3-openid==3.2.0
