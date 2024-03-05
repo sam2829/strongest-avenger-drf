@@ -60,7 +60,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-sam2829-strongestavenge-igozhq1ys7p.ws-eu108.gitpod.io','strongest-avenger-drf-api-c57eb1c3e676.herokuapp.com']
 
