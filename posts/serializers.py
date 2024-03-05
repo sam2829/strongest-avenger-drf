@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Posts
-#from moviepy.editor import VideoFileClip
+from moviepy.editor import VideoFileClip
 from PIL import Image
 from likes.models import Like
 
