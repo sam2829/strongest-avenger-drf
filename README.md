@@ -42,12 +42,24 @@ The user when making a post can also write the character name of who they are po
 
 ***Comment***
 
-The Comment model is linked is linked to the Posts model by foreign key using a one to many relationship to store comments for a specific post.
+The Comment model is linked to the Posts model by foreign key using a one to many relationship to store comments for a specific post.
 The Comment model is also linked to the User model by foreign key using a one to many relationship to allow for comments to be linked back to a specific user and their profile.
 When the user is making a comment on a post they they can also select whether they a agree or not that the character in the post is the strongest avenger.
 
 ***Follow***
 
+The Follow mode is linked to the User model by foreign key using a one to many relationship. This is the case for both fields owner and followed. These fields have related names "following" and "followed". This allows the user to follow multiple users and also have multiple users following them.
+The Model also makes sure that a user can not follow or be followed by a user multiple times.
+
 ***Like***
 
+The Like model is linked to the User model by foreign key using a one to many relationship so that any likes can be linked back to a specific user and their profile.
+The Like model is also linked to the Post model by foreign key using a one to many relationship to store likes for a specific post.
+The model also makes sure that a user can not like the same post twice.
+
 ***Report***
+
+The Report model is linked to the User mode by foreign key using a one to many relationship so that any reports can be linked back to a specific user and their profile.
+The Report model is also linked to the post Post model by foreign key using a one to many relationship to so that any reports can be linked back to the post with the issue.
+In the Report model the user will also be provided a select choices for the reason for the report and a description to explain.
+There is also a Boolean field top select whether the issue has been resolved, this is strictly for admin to select once they have resolved the issue.
