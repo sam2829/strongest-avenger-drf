@@ -55,7 +55,6 @@ class Posts(models.Model):
             )
         super().save(*args, **kwargs)
 
-
     class Meta:
         ordering = ['-created_at']
         # constraints = [

@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Posts
 
 
-
 class PostsAdmin(admin.ModelAdmin):
     """
     This class is for the posts displayed on the admin page
@@ -13,5 +12,6 @@ class PostsAdmin(admin.ModelAdmin):
         'character_name', 'character_category'
     )
     search_fields = ('owner__username', 'title', 'character_name')
+
 
 admin.site.register(Posts, PostsAdmin)

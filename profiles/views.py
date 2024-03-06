@@ -6,7 +6,6 @@ from .models import Profile
 from .serializers import ProfileSerializer
 
 
-
 class ProfileList(generics.ListAPIView):
     """
     This class is to render the list of all profiles
@@ -32,7 +31,7 @@ class ProfileList(generics.ListAPIView):
         'owner__following__created_at',
         'owner_followed_created_at',
     ]
-    
+
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
     """

@@ -97,7 +97,3 @@ class LikeDetailViewTests(APITestCase):
     def test_logged_out_user_cannot_delete_like(self):
         response = self.client.delete(f'/likes/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-
-
-    
-

@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Report
 
 
-
 class ReportAdmin(admin.ModelAdmin):
     """
     This class is for the reports displayed on the admin page
@@ -23,5 +22,6 @@ class ReportAdmin(admin.ModelAdmin):
 
     owner_display.short_description = 'Owner'
     post_display.short_description = 'Post'
+
 
 admin.site.register(Report, ReportAdmin)

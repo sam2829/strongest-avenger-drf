@@ -55,12 +55,12 @@ class PostsSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError(
                     'Image file larger than 2MB!'
                 )
-            
+
             if value.image.width > 4096:
                 raise serializers.ValidationError(
                     'Image width larger than 4096px!'
                 )
-            
+
             if value.image.height > 4096:
                 raise serializers.ValidationError(
                     'Image height larger than 4096px!'
@@ -68,7 +68,7 @@ class PostsSerializer(serializers.ModelSerializer):
 
             return value
 
-    #validate video file uploaded
+    # validate video file uploaded
     def validate_video(self, value):
 
         if value:

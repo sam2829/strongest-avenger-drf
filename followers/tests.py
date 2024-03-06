@@ -59,7 +59,6 @@ class FollowDetailViewTests(APITestCase):
         follower_1 = Follow.objects.create(owner=sam, followed=emma)
         follower_2 = Follow.objects.create(owner=emma, followed=sam)
 
-
     # test that user can retrieve single follower by id
     def test_can_retrieve_follower_detail(self):
         sam = User.objects.get(username='sam')

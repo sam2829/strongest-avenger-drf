@@ -17,7 +17,7 @@ class ProfileListViewTests(APITestCase):
             title='test title'
         )
 
-     # test logged in user can create a report
+    # test logged in user can create a report
     def test_logged_in_user_can_create_report(self):
         self.client.login(username='sam', password='pass')
         response = self.client.post(

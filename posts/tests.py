@@ -25,7 +25,7 @@ class PostListViewTests(APITestCase):
     # create a image for testing
     def generate_image(self):
         file = io.BytesIO()
-        image = Image.new('RGBA', size=(100, 100), color=(0, 255, 0, 255))  # Green color with full opacity
+        image = Image.new('RGBA', size=(100, 100), color=(0, 255, 0, 255))
         image.save(file, 'png')
         file.name = 'test.png'
         file.seek(0)
@@ -64,6 +64,7 @@ class PostListViewTests(APITestCase):
         )
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
+
 class PostDetailViewTests(APITestCase):
     """
     this class is for testing the Post Detail views
@@ -72,9 +73,16 @@ class PostDetailViewTests(APITestCase):
     def setUp(self):
         sam = User.objects.create_user(username='sam', password='pass')
         emma = User.objects.create_user(username='emma', password='pass')
-        Posts.objects.create(owner=sam, title='test title', content='sam content')
-        Posts.objects.create(owner=emma, title='another title', content='emma content')
-
+        Posts.objects.create(
+            owner=sam,
+            title='test title',
+            content='sam content'
+        )
+        Posts.objects.create(
+            owner=emma,
+            title='another title',
+            content='emma content'
+        )
 
     # create a image for testing
     def generate_image(self):
@@ -95,7 +103,6 @@ class PostDetailViewTests(APITestCase):
     def test_cannot_retrieve_post_detail_using_invalid_id(self):
         response = self.client.get(f'/posts/23/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
 
     # test that user can update a post
     def test_logged_in_user_can_update_post(self):
@@ -164,7 +171,6 @@ class PostDetailViewTests(APITestCase):
     def test_logged_out_user_cannot_delete_post(self):
         response = self.client.delete(f'/posts/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
-
 
     # test invalid data in post is not accepted
     def test_invalid_post_data(self):

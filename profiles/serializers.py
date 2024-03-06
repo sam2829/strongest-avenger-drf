@@ -2,9 +2,10 @@ from rest_framework import serializers
 from .models import Profile
 from followers.models import Follow
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     """
-    This class is to serialize the pofile data 
+    This class is to serialize the pofile data
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()

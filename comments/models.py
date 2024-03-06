@@ -8,7 +8,7 @@ class Comment(models.Model):
     this model is to be related to the 'owner',
     'Posts' and is for user comments
     """
-    
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
