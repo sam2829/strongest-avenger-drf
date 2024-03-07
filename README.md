@@ -63,3 +63,7 @@ The Report model is linked to the User mode by foreign key using a one to many r
 The Report model is also linked to the post Post model by foreign key using a one to many relationship to so that any reports can be linked back to the post with the issue.
 In the Report model the user will also be provided a select choices for the reason for the report and a description to explain.
 There is also a Boolean field top select whether the issue has been resolved, this is strictly for admin to select once they have resolved the issue.
+
+An entity relationship diagram was created using drawSQL to show the schemas for each of the models and how they are related:
+
+![ERD Screenshot](docs/readme_screenshots/erd-screenshot.png)
