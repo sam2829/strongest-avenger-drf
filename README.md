@@ -67,3 +67,43 @@ There is also a Boolean field top select whether the issue has been resolved, th
 An entity relationship diagram was created using drawSQL to show the schemas for each of the models and how they are related:
 
 ![ERD Screenshot](docs/readme_screenshots/erd-screenshot.png)
+
+[back to top](#strongest-avenger-drf-api)
+
+## API Endpoints
+
+| URL | HTTP Method | CRUD Operation | View name |
+| --- | --- | --- | --- |
+| `Profile Endpoints` |
+| /profiles | GET | List all profiles | LIST |
+| /profiles/:id | GET | Retrieve a profile by id | DETAIL |
+| /profiles/:id | PUT | Edit / update profile by id | DETAIL |
+| ` Posts Endpoints` |
+| /posts | GET | List of all posts | LIST |
+| /posts | POST | Create a post | LIST |
+| /posts/:id | GET | Retrieve a post by id | DETAIL |
+| /posts/:id | PUT | Edit / update a post by id | DETAIL |
+| /posts/:id | DELETE | Delete a post by id | DETAIL |
+| ` Comment Endpoints` |
+| /comments | GET | List of all comments | LIST |
+| /comments | POST | Create a comment | LIST |
+| /comments/:id | GET | Retrieve a comment by id | DETAIL |
+| /comments/:id | PUT | Edit / update a comment by id | DETAIL |
+| /comments/:id | DELETE | Delete a comment by id | DETAIL |
+| `Follow Endpoints` |
+| /followers | GET | List of all followers | LIST |
+| /followers | POST | Create a new follower | LIST |
+| /followers/:id | GET | Retrieve follower by id | DETAIL |
+| /followers/:id | PUT | Edit / Update follower by id | DETAIL |
+| /followers/:id | DELETE | Delete follower by id | DETAIL |
+| `Like Endpoints` |
+| /likes | GET | List of all likes | LIST |
+| /likes | POST | Create a like | LIST |
+| /likes/:id | GET | Retrieve like by id | DETAIL |
+| /likes/:id | DELETE | Delete like by id | DETAIL |
+| `Report Endpoints` |
+| /report | POST | Create a new report | LIST |
+
+
+
+
