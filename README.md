@@ -16,6 +16,11 @@ This is part of my fifth  portfolio project for the Code Institute and the goal 
   - [Project Goals](#project-goals)
   - [Planning](#planning)
     - [Data Models](#data-models)
+  - [API Endpoints](#api-endpoints)
+  - [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+    - [Frameworks and Tools Used](#frameworks-and-tools-used)
+    - [Libraries Used](#libraries-used)
 
 ## Planning
 
@@ -104,6 +109,44 @@ An entity relationship diagram was created using drawSQL to show the schemas for
 | `Report Endpoints` |
 | /report | POST | Create a new report | LIST |
 
+[back to top](#strongest-avenger-drf-api)
 
+## Technologies Used
 
+### Languages Used
+
+- Python
+
+### Frameworks and Tools Used
+
+- Django Rest Framework
+  - Django Rest Framework was used as the main python framework in the development of this project.
+- ElephantSQL
+  - ElephantSQL was used for the production database.
+- Cloudinary
+  - Cloudinary was used to store the images and videos posted.
+- Gitpod
+  - Gitpod was used to write the code.
+- Github
+  - Github was used to store the projects code after being pushed from Gitpod.
+- Heroku
+  - Heroku was used for deployment.
+- DrawSQL
+  - DrawSQL was used to draw out the entity relationship diagram.
+
+### Libraries Used
+
+- Django - A python pakage for the django rest framework.
+- Django Allauth - An integrated set of applications used for user authentication, registration and account management.
+- Django rest auth - Provides REST API endpoints for login and logout.
+- django rest framework-simplejwt - Used for JSON web token authentication.
+- psychopg2 - Database adapter to enable interaction between Python and PostgreSQL database.
+- django cors headers - This Django app adds CORS headers to responses, to enable the API to respond to requests from origins other than it's own host.
+- Cloudinary - Used to store images and videos.
+- Pillow - Used for image processing.
+- Django Signal - Used to create a profile everytime a user is created.
+- moviepy - Used to validate the length of video posted.
+- python magic - Used to check if post being created contains image or video.
+- gunicorn - Used to help run application.
+- django filter - Used to help filter searches.
 
