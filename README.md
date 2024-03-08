@@ -150,3 +150,10 @@ An entity relationship diagram was created using drawSQL to show the schemas for
 - gunicorn - Used to help run application.
 - django filter - Used to help filter searches.
 
+[back to top](#strongest-avenger-drf-api)
+
+## Testing
+
+I have included details of my testing during and post development in a seperate file called [TESTING.md](TESTING.md)
+
+[back to top](#strongest-avenger-drf-api)
