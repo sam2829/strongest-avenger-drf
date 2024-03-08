@@ -9,7 +9,7 @@ The user is also able to view different posts by whether they are the posts they
 
 This is part of my fifth  portfolio project for the Code Institute and the goal with this project is to display my new skills in using frameworks such as Django Rest (for the API backend) and React (for the frontend). I have decided to build a social website where users are able to create accounts and make posts on their favourite Marvel characters. The User can also comment, like and agree on others posts and being able to follow other users to see their posts.
 
-## Contents
+## Content
 
 - [Strongest Avenger DRF API](#strongest-avenger-drf-api)
   - [Overview](#overview)
