@@ -21,6 +21,7 @@ This is part of my fifth  portfolio project for the Code Institute and the goal 
     - [Languages Used](#languages-used)
     - [Frameworks and Tools Used](#frameworks-and-tools-used)
     - [Libraries Used](#libraries-used)
+  - [Testing](#testing)
 
 ## Planning
 
