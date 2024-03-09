@@ -119,3 +119,68 @@ In this project I also done automated python testing. In this I tried to test as
 ![Automated Testing Report Screenshot](docs/testing_screenshots/automated-testing-report.png)
 
 [back to top](#strongest-avenger-drf-api)
+
+## Validators
+
+***CI Python Linter***
+
+The CI Python Linter was used to validate the python code used throughout the project. All results are in the table below:
+
+| Files | Expected Result | Result | Pass / Fail |
+| --- | --- | --- | --- |
+|`strongest_avenger_drf_api`|
+| asgi.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| permissions.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| settings.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | ...| 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| wsgi.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`profiles`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`posts`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`comments`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`followers`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`likes`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
+|`report`|
+| admin.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| apps.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| models.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| serializers.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| tests.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| urls.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass | 
+| views.py | CI Python Linter to show no errors. | CI Python Linter returned no errors. | Pass |
