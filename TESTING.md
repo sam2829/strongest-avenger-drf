@@ -88,4 +88,7 @@ Full test table:
 | logged out user cannot create a report. | When a user is logged out and on the report URL, the report form is not on display and the user is greeted with a 403 forbidden response and statement saying authentication credentials were not provided. | Made sure I was logged out and went to the report URL, the report form was not on display and I was greeted with a 403 forbidden response and statement saying authentication credentials were not provided. | Pass |
 | Cannot create report leaving description field blank. | When creating a report, if the user leaves the description field blank and attempt to post the report, the post will be unsuccessful and the blank field will be highlighted stating this field cannot be blank. | Tried creating a report and on each occassion left the description field blank. | Each time I attempted to post the report, the post was unsuccessful and the description field was highlighted and stated that this field cannot may not be blank. | Pass |
 
+[back to top](#strongest-avenger-drf-api)
+
+## Automated testing
 

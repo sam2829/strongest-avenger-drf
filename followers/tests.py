@@ -20,7 +20,8 @@ class FollowListViewTests(APITestCase):
         Follow.objects.create(owner=sam, followed=emma)
         response = self.client.get('/followers/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
+        count = Follow.objects.count()
+        self.assertEqual(count, 1)
 
     # test logged in user can follow another user
     def test_logged_in_user_can_create_follower(self):
@@ -91,3 +92,16 @@ class FollowDetailViewTests(APITestCase):
     def test_logged_out_user_cannot_delete_follow(self):
         response = self.client.delete(f'/followers/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    # test logged in user cannot follow a user twice
+    def test_logged_in_user_cannot_follow_a_user_twice(self):
+        self.client.login(username='sam', password='pass')
+        sam = User.objects.get(username='sam')
+        emma = User.objects.get(username='emma')
+        response = self.client.post(
+            '/followers/',
+            {
+                'followed': emma.id
+            }
+        )
+        self.assertEqual(response.data, {'detail': 'possible duplicate'})

@@ -16,14 +16,12 @@ class FollowSerializer(serializers.ModelSerializer):
             'id', 'owner', 'created_at', 'followed_name',
             'followed'
         ]
-    print("not in create")
+
     def create(self, validated_data):
-        print("in create")
+
         try:
-            print("in try")
             return super().create(validated_data)
         except IntegrityError:
-            print("in except")
             raise serializers.ValidationError({
                 'detail': 'possible duplicate'
             })

@@ -24,8 +24,9 @@ class LikeListViewTests(APITestCase):
         emma = User.objects.get(username='emma')
         Like.objects.create(owner=sam, post=self.post)
         response = self.client.get('/likes/')
+        count = Like.objects.count()
+        self.assertEqual(count, 1)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 1)
 
     # test logged in user can like a post
     def test_logged_in_user_can_create_a_like(self):
@@ -97,3 +98,15 @@ class LikeDetailViewTests(APITestCase):
     def test_logged_out_user_cannot_delete_like(self):
         response = self.client.delete(f'/likes/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    # test logged in user cannot like a post twice
+    def test_logged_in_user_cannot_create_a_like_twice(self):
+        self.client.login(username='sam', password='pass')
+        sam = User.objects.get(username='sam')
+        response = self.client.post(
+            '/likes/',
+            {
+                'post': self.post.id
+            }
+        )
+        self.assertEqual(response.data, {'detail': 'possible duplicate'})
