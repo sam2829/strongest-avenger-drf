@@ -92,3 +92,30 @@ Full test table:
 
 ## Automated testing
 
+In this project I also done automated python testing. In this I tried to test as much on the apps as I could. These tests were created to test the functionality of the apps. These can be found in the test.py files in the respective apps.
+
+***Profiles***
+
+![Automated Testing Profiles Screenshot](docs/testing_screenshots/automated-testing-profiles.png)
+
+***Posts***
+
+![Automated Testing Posts Screenshot](docs/testing_screenshots/automated-testing-posts.png)
+
+***Comments***
+
+![Automated Testing Comments Screenshot](docs/testing_screenshots/automated-testing-comments.png)
+
+***Followers***
+
+![Automated Testing Followers Screenshot](docs/testing_screenshots/automated-testing-followers.png)
+
+***Likes***
+
+![Automated Testing Likes Screenshot](docs/testing_screenshots/automated-testing-likes.png)
+
+***Report***
+
+![Automated Testing Report Screenshot](docs/testing_screenshots/automated-testing-report.png)
+
+[back to top](#strongest-avenger-drf-api)
