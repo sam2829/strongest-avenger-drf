@@ -89,6 +89,8 @@ Full test table:
 | Logged in user can create a report. | When a user is logged in and on the report URL, the report form is on display and user is able to create a report. | Logged in as a user and went to the report URL. | When logged in and on the report URL, I could see the create a report form and was able to create a report. | Pass |
 | logged out user cannot create a report. | When a user is logged out and on the report URL, the report form is not on display and the user is greeted with a 403 forbidden response and statement saying authentication credentials were not provided. | Made sure I was logged out and went to the report URL, the report form was not on display and I was greeted with a 403 forbidden response and statement saying authentication credentials were not provided. | Pass |
 | Cannot create report leaving description field blank. | When creating a report, if the user leaves the description field blank and attempt to post the report, the post will be unsuccessful and the blank field will be highlighted stating this field cannot be blank. | Tried creating a report and on each occasion left the description field blank. | Each time I attempted to post the report, the post was unsuccessful and the description field was highlighted and stated that this field cannot be blank. | Pass |
+| `Pagination`|
+| Check that page pagination is working. | On any page where we have a list, the list should not exceed ten per page. When this happens we should have the option to go to the next page. | Created more than ten posts, comments. | When there was more than ten posts or comments, only ten were shown per page and I was able to paginate to the next page to see another list. | Pass |
 
 [back to top](#strongest-avenger-drf-api)
 
