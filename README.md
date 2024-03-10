@@ -226,7 +226,7 @@ For deployment to Heroku the following steps were made:
   - I then scrolled down and clicked on the button "Deploy Branch" which is now building the app.
   - Once the app is successfully deployed, a message appeared saying "your app was successfully deployed." Then click on the "view" button which will take me to the deployed link.
 
-[Back to top](#royal-sam-golf-club)
+[back to top](#strongest-avenger-drf-api)
 
 ## Credits
 
@@ -240,4 +240,4 @@ For deployment to Heroku the following steps were made:
 - Google - For use of all images in the project.
 - Mentor Jubril - For helping me realise what's needed to build a good project and also for encouragement and understanding.
 
-[Back to top](#royal-sam-golf-club)
+[back to top](#strongest-avenger-drf-api)
