@@ -22,6 +22,7 @@ This is part of my fifth  portfolio project for the Code Institute and the goal 
     - [Frameworks and Tools Used](#frameworks-and-tools-used)
     - [Libraries Used](#libraries-used)
   - [Testing](#testing)
+  - [Deployment](#deployment)
 
 ## Planning
 
@@ -158,3 +159,73 @@ An entity relationship diagram was created using drawSQL to show the schemas for
 I have included details of my testing during and post development in a seperate file called [TESTING.md](TESTING.md)
 
 [back to top](#strongest-avenger-drf-api)
+
+***GitHub***
+
+This project was developed by using a specialized code institute template which is set up to run in Gitpod.
+
+- Once loaded the template provided by code institute, in the top right of the file click on the green drop-down menu labelled "code".
+- Then select HTTPS.
+- Next copy the URL given to you.
+- Next I loaded up Gitpod and clicked on the "Dashboard" at the top right of the page.
+- Next, I clicked on "new workspace" on the right hand side of the page.
+- In the repository URL, paste in the URL copied from the GitHub account.
+- Next clicked on the respository in the drop down menu.
+- Next, once the repository was selected I clicked continue and the workspace was now loading.
+
+***Version Control***
+
+For version control the following steps were made:
+
+- If any changes were made to my Gitpod project.
+- First files were made ready for commit with command - git add filename or git add . to add all files.
+- To commit the changes using the following command - git commit -m "This is my commit" Note the brief description at the end of the command to make you aware of what changes have occurred.
+- To then move the changes to GitHub, use the following command - git push
+
+***Clone Repo***
+
+Creating a clone allows you to make a copy of the repository at the specific point in time. This lets you run a copy of the project locally. This can be done by:
+
+- Navigate to the repository you choose to clone in your GitHub.
+- Clicking on the arrow of the green button named "Code" at the top of the file.
+- Then select "Local" then under local select "HTTPS" and then copy that URL.
+- Navigate to your code editor and within the terminal change the directory to the location you wish to clone the repository to.
+- Type "git clone" and paste the copied HTTPS link from GitHub.
+- Press enter and git will clone the repository to your local machine.
+
+***Forking the GitHub Repository***
+
+Forking the GitHub repository allows you to make a copy of the original repository on your GitHub account to view and make changes without it effecting the original repository. This can be done by:
+
+- Log in to your GitHub account and locate the repository you wish to fork.
+- Near the top of the page, under the "settings" button going across the page, you should see a button saying "Fork".
+- Click the "Fork" button and you should now have a copy of the original repository in your GitHub account.
+
+***Deployment to Heroku***
+
+For deployment to Heroku the following steps were made:
+
+- First sign in to your Heroku account.
+  - On the top right of the page there is a drop-down menu called "new", click this and click on "create new app".
+  - You then need to decide your unique app name using '-' between each word. Then select which region you are working from and then click on the button "create app".
+  - Once you have clicked on "create app" you will be taken to a new page. On this page you will see a row of tabs at the top left of the page. You first need to click on the "settings" tab and go to the settings page.
+  - Login into your ElephantSQL account and create a new instance.
+  - Next name your project and select the tiny turtle plan, then click select region.
+  - Select the data center near to you then click review.
+  - Check the options you selected the click create instance.
+  - Once ElephantSQL instance created, click on the instance created and there you will see the URL, which you can copy ready to be placed in the heroku app.
+  - You will also need to log into your Cloudinary account, there you can select the dashboard option. In there you will see your Cloudinary URL, you will also need this for the heroku app. You can copy this by clicking on the eye symbol next to it.
+  - If you have any code that you have kept private which has been prevented from loading to your GitHub, then you must click on the button "Reveal Config Vars". A small table will then appear with columns "key" and "value". Config Vars used:
+    - CLOUDINARY_URL: (Enter Cloudinary API URL)
+    - DATABASE URL: (Enter the database URL from ElephantSQL)
+    - SECRET_KEY: (Enter your secret key)
+    - ALLOWED_HOST: (Enter the deployed Heroku app URL)
+  - I then went back to the tabs row at the top of the page and clicked on the "Deploy" tab to take me to the deploy page.
+  - On the deployment page, I scrolled down to deployment method and confirmed I wanted to deploy through GitHub.
+  - When I click on GitHub a search bar will appear underneath which will allow me to search for my GitHub repository. I made sure I spelt the repository I'm searching for exactly as I named it and then clicked the search button.
+  - The repository then appeared underneath my search, I checked this was the correct repository and then clicked the "connect" button. This has now linked up my Heroku app and my GitHub repository code.
+  - I then scrolled down to the button "Enable Automatic Deploys", this allows my Heroku app to automatically update every time I've pushed a new change to my code to GitHub. This is optional.
+  - I then scrolled down and clicked on the button "Deploy Branch" which is now building the app.
+  - Once the app is successfully deployed, a message appeared saying "your app was successfully deployed." Then click on the "view" button which will take me to the deployed link.
+
+[Back to top](#royal-sam-golf-club)
