@@ -229,3 +229,17 @@ For deployment to Heroku the following steps were made:
   - Once the app is successfully deployed, a message appeared saying "your app was successfully deployed." Then click on the "view" button which will take me to the deployed link.
 
 [Back to top](#royal-sam-golf-club)
+
+## Credits
+
+- Code Institute - Provided the template for Gitpod so that I was able to build this project. Also, without the knowledge gained through out doing the course I would not have been able to build this project. The tutor support was also very helpful.
+- Slack - The slack community help me search for any issues I came across and build this project.
+- Django Rest Framework - For being able to use Django Rest Framework to build my project and all the documentation to help build and set up correctly.
+- Cloudinary - For storing the data for my posts.
+- StackOverflow - For helping give me an idea on how I could make my models work.
+- StackOverflow / Cloudinary - For helping figure out how I post images and videos to the correct storage in Cloudinary.
+- Allauth - For being able to use their templates.
+- Google - For use of all images in the project.
+- Mentor Jubril - For helping me realise what's needed to build a good project and also for encouragement and understanding.
+
+[Back to top](#royal-sam-golf-club)
