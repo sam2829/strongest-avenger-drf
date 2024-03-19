@@ -57,12 +57,12 @@ class Posts(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        constraints = [
-            models.CheckConstraint(
-                check=Q(image__isnull=True) | Q(video__isnull=True),
-                name='only_one_media_allowed'
-            )
-        ]
+        # constraints = [
+        #     models.CheckConstraint(
+        #         check=Q(image__isnull=True) | Q(video__isnull=True),
+        #         name='only_one_media_allowed'
+        #     )
+        # ]
 
     def __str__(self):
         return f'{self.id} {self.title}'
