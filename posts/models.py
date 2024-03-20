@@ -48,12 +48,12 @@ class Posts(models.Model):
         validators=[validate_video]
     )
 
-    def save(self, *args, **kwargs):
-        if self.image and self.video:
-            raise ValueError(
-                "Only one media file is allowed: either image or video."
-            )
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if self.image and self.video:
+    #         raise ValueError(
+    #             "Only one media file is allowed: either image or video."
+    #         )
+    #     super().save(*args, **kwargs)
 
     class Meta:
         ordering = ['-created_at']
