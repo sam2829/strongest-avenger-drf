@@ -8,7 +8,7 @@ class ReportCreate(generics.ListCreateAPIView):
     this class is for user to create a report
     """
     serializer_class = ReportSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
