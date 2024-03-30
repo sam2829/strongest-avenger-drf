@@ -3,7 +3,7 @@ from .models import Report
 from .serializers import ReportSerializer
 
 
-class ReportCreate(generics.CreateAPIView):
+class ReportCreate(generics.ListCreateAPIView):
     """
     this class is for user to create a report
     """
