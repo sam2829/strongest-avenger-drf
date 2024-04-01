@@ -31,12 +31,12 @@ class Posts(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    character_name = models.CharField(max_length=50)
+    character_name = models.CharField(max_length=40)
     character_category = models.CharField(
         max_length=20, choices=CHARACTER_CATEGORY_CHOICES
     )
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    title = models.CharField(max_length=50)
+    content = models.TextField(max_length=300)
     image = models.ImageField(
         upload_to='images/', null=True, blank=True
     )

@@ -20,7 +20,7 @@ class Report(models.Model):
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     reason = models.CharField(max_length=30, choices=REASON_CHOICES)
-    description = models.TextField()
+    description = models.TextField(max_length=300)
     resolved = models.BooleanField(default=False)
 
     class Meta:
