@@ -1,0 +1,63 @@
+.commentContainer {
+  background-color: #969696;
+  border-radius: 5px;
+  border: 2px solid #8a00c2;
+  padding: 20px;
+  margin-bottom: 70px;
+}
+
+.Form {
+  border: none;
+}
+
+.agreeIcon i {
+  color: #ffac00;
+  font-size: 30px;
+  padding-top: 20px;
+}
+
+.agreeIcon i:hover {
+  color: #8a00c2;
+  transition: color ease-in-out 0.3s;
+}
+
+.textarea {
+  background: white;
+  border: 1px solid #ffac00;
+  border-radius: 5px !important;
+  color: black;
+  outline: none !important;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid #8a00c2;
+}
+
+.CommentTitle {
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #8a00c2;
+  font-size: 1.2rem;
+}
+
+.Message {
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  color: #8a00c2;
+  font-size: 1rem;
+}
+
+/* Edit form text area */
+
+.EditContent {
+  margin-top: 15px;
+}

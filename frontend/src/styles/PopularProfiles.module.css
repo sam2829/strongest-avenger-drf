@@ -1,0 +1,10 @@
+.HeaderProfiles {
+  font-weight: 700;
+  color: #8a00c2;
+  margin-top: 10px;
+}
+
+.ProfileContainer {
+  min-width: 240px;
+  margin-top: 40px;
+}

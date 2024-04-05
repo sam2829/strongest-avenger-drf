@@ -1,0 +1,15 @@
+.NavBar {
+  background-color: #969696;
+  border: 2px solid #8a00c2;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.NavBar a {
+  color: black !important;
+  padding: 6px;
+}
+
+.Active i {
+  color: #8a00c2;
+}

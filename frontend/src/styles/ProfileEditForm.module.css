@@ -1,0 +1,31 @@
+.FormFields {
+  color: #8a00c2 !important;
+  text-align: center;
+}
+
+.EditButton {
+  margin: 20px 20px;
+}
+
+.ChooseFile {
+  display: none;
+}
+
+.Media {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+/* edit form input fields */
+
+.EditInput {
+  background: white;
+  border: 1px solid #ffac00 !important;
+  border-radius: 5px !important;
+  color: black;
+  outline: none !important;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}

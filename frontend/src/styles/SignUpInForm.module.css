@@ -1,0 +1,54 @@
+.Row {
+  border-bottom: 1px solid #8a00c2;
+  padding: 8px;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 1.8rem;
+  padding-left: 12px;
+  color: #8a00c2;
+}
+
+.Input {
+  background: white;
+  border: 1px solid #ffac00;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  outline: none !important;
+}
+
+.Input:active {
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.Input:focus {
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.Input input:focus {
+  outline: none;
+  border-color: transparent !important;
+}
+
+.Link {
+  color: black;
+  text-decoration: none;
+}
+
+.Link:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+.Link span {
+  color: #ffac00;
+}

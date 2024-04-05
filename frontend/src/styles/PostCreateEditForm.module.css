@@ -1,0 +1,24 @@
+.FormFields {
+  color: #8a00c2 !important;
+  text-align: center;
+}
+
+.PostButton {
+  margin: 20px 20px;
+}
+
+.ChooseFile {
+  display: none;
+}
+
+.Media {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.RadioButtons {
+  color: #8a00c2;
+  margin: 5px 0 10px 0;
+}

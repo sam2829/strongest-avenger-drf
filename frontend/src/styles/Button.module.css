@@ -1,0 +1,85 @@
+.Button {
+  font-size: 1rem;
+  align-self: center;
+  border-radius: 5px;
+  border-color: transparent;
+  padding: 6px 14px;
+  color: black;
+  background-color: #ffac00;
+  margin-top: 14px;
+  outline: 3px solid #ffac00 !important;
+}
+
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  background-color: #ffac00;
+  color: black;
+}
+
+.Button:hover:active {
+  background-color: #ffac00 !important;
+  color: black;
+}
+
+.Button:active {
+  background-color: #ffac00 !important;
+  border-color: transparent;
+  color: black !important;
+  border-color: transparent !important;
+}
+
+.Button:focus {
+  background-color: #ffac00;
+  border-color: transparent;
+  color: black;
+}
+
+/* Follow and unfollow buttons */
+
+.Follow {
+  font-size: 0.7rem;
+  padding: 2px 2px;
+  margin-top: 0;
+  font-weight: 700;
+  color: #8a00c2;
+}
+
+.Follow:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+  background-color: #8a00c2;
+  color: #ffac00;
+}
+
+.UnFollow {
+  font-size: 0.7rem;
+  padding: 2px 2px;
+  margin-top: 0;
+  font-weight: 700;
+  background-color: #8a00c2;
+  color: #ffac00;
+  outline: 3px solid #8a00c2 !important;
+}
+
+/* Main profile page follow and unfollow buttons */
+
+.ProfilePageFollow {
+  font-size: 0.8rem;
+  padding: 6px 6px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #8a00c2;
+}
+
+.ProfilePageUnFollow {
+  font-size: 0.8rem;
+  padding: 6px 6px;
+  margin-top: 10px;
+  font-weight: 700;
+  background-color: #8a00c2;
+  color: #ffac00;
+  outline: 3px solid #8a00c2 !important;
+}

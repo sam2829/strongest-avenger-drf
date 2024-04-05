@@ -1,0 +1,25 @@
+.SearchByHeader {
+  font-weight: 700;
+  color: #8a00c2;
+  margin-top: 10px;
+}
+
+.SearchByContainer {
+  margin-top: 40px;
+}
+
+.SearchByLinks {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #8a00c2;
+}
+
+.SearchByLinks:hover {
+  color: #ffac00;
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+}
+
+.ActiveLink {
+  color: #ffac00;
+}

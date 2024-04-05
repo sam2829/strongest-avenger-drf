@@ -1,0 +1,18 @@
+.NotFoundContent {
+  justify-content: center;
+  background-color: #969696;
+  margin-top: 40px;
+  max-width: 800px;
+  border: 2px solid #8a00c2;
+  border-radius: 5px;
+}
+
+.Link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #8a00c2;
+}
+
+.Link:hover {
+  color: #ffac00;
+}

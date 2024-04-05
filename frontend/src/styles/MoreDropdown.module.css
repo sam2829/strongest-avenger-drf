@@ -1,0 +1,59 @@
+/* drop down menu for posts and comment */
+.DropdownMenu {
+  background-color: #969696;
+  text-align: center;
+}
+
+.DropdownItem i {
+  color: #ffac00;
+  display: inline-block !important;
+  max-width: 50%;
+  padding: 0px;
+}
+
+.DropdownItem i:hover {
+  color: #8a00c2;
+}
+
+.Absolute {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+}
+
+/* drop down menu for profile */
+
+.ProfileDropdownMenu {
+  background-color: #969696;
+  text-align: left;
+}
+
+.ProfileDropdownItem {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ProfileDropdownItem i {
+  color: #ffac00;
+  display: inline-block !important;
+  max-width: 50%;
+  padding: 8px;
+}
+
+.ProfileDropdownItem i:hover {
+  color: #8a00c2;
+}
+
+.ProfileDropdownIcon {
+  position: absolute;
+  right: 20px;
+  z-index: 99;
+}
+
+.ProfileDropdownIcon i {
+  color: #ffac00;
+}
+
+.ProfileDropdownIcon i:hover {
+  color: #8a00c2;
+}

@@ -1,0 +1,30 @@
+.Row {
+  border-bottom: 1px solid #8a00c2;
+  padding: 8px;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 1.6rem;
+  padding-left: 12px;
+  color: #8a00c2;
+}
+
+.FormFields {
+  color: #8a00c2 !important;
+  text-align: center;
+}
+
+.ReportInput {
+  background: white;
+  border: 1px solid #ffac00 !important;
+  border-radius: 5px !important;
+  color: black;
+  outline: none !important;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.ReportButton {
+  margin: 20px 20px;
+}

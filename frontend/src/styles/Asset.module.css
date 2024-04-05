@@ -1,0 +1,9 @@
+.Asset {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  color: #8a00c2;
+  text-align: center;
+}

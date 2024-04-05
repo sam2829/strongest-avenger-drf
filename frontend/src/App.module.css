@@ -1,0 +1,60 @@
+.App {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background-color: rgb(241, 241, 241);
+  min-height: 135vh;
+  color: black;
+}
+
+.Main {
+  padding-top: 110px;
+}
+
+.Content {
+  background-color: #969696;
+  margin-top: 40px;
+  max-width: 800px;
+  border: 2px solid #8a00c2;
+  border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: #8a00c2;
+  transition: color ease-in-out 0.3s;
+}
+
+i {
+  color: black;
+  font-size: 1.4rem;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+i:hover {
+  cursor: pointer;
+  transition: color ease-in-out 0.3s;
+  color: #8a00c2;
+}
+
+/* Scroll bar styles */
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+  background: #969696;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ffac00;
+}

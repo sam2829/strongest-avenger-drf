@@ -1,0 +1,57 @@
+.PostContainer {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.PostBody {
+  background-color: #969696;
+  color: #8a00c2;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 2px solid #8a00c2;
+}
+
+.PostTitle {
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.PostBody a {
+  color: #8a00c2 !important;
+}
+
+.PostMedia {
+  height: 40vh;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.PostIcons {
+  color: #ffac00;
+  display: flex;
+  justify-content: center;
+}
+
+.IconContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+}
+
+.IconCount {
+  margin-left: 4px;
+}
+
+.PostIcons i {
+  color: #ffac00;
+}
+
+.PostIcons i:hover {
+  color: #8a00c2;
+  transition: color ease-in-out 0.3s;
+}

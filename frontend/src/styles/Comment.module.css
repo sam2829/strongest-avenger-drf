@@ -1,0 +1,45 @@
+.Tick i {
+  color: #ffac00;
+  font-size: 30px;
+}
+
+.Cross i {
+  color: #8a00c2;
+  font-size: 30px;
+}
+
+.Owner {
+  font-weight: 700;
+  margin: 0 6px 0 6px;
+  color: #8a00c2;
+}
+
+.Date {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Styles for comments for small screen sizes */
+
+@media (max-width: 576px) {
+  /* Adjust font size for small screens */
+  .Owner {
+    font-size: 0.8rem;
+  }
+
+  .Date {
+    font-size: 0.6rem;
+  }
+
+  .Content {
+    font-size: 0.8rem;
+  }
+
+  .Tick i {
+    font-size: 20px;
+  }
+
+  .Cross i {
+    font-size: 20px;
+  }
+}
