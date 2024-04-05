@@ -1,8 +1,7 @@
 import axios from "axios";
 
 // Setting the base URL for all requests to the specified API
-// axios.defaults.baseURL =
-//   "https://strongest-avenger-drf-api-c57eb1c3e676.herokuapp.com/";
+axios.defaults.baseURL = "/api";
 // Setting the default headers for POST requests to specify the
 // content type as multipart/form-data
 axios.defaults.headers.post["Content-Type"] = "multipart/form-data";
