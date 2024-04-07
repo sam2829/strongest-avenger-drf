@@ -41,7 +41,7 @@ const NavBar = ({ showAlert }) => {
     <NavLink
       activeClassName={styles.Active}
       to="/posts/create"
-      className="mr-auto"
+      className = "mr-auto"
     >
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
