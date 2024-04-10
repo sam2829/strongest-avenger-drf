@@ -94,7 +94,7 @@ const CreateReportForm = ({ showAlert }) => {
                 className={`${btnStyles.Button} ${styles.ReportButton}`}
                 type="submit"
               >
-                save
+                submit
               </Button>
               <Button
                 className={`${btnStyles.Button} ${styles.ReportButton}`}

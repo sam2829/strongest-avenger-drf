@@ -7,6 +7,17 @@ import styles from "../styles/NavBar.module.css";
 class LoggedInNavIcons extends Component {
   render() {
     const { currentUser, handleSignOut } = this.props;
+
+    // The add post icon in navbar
+  const addPostIconDropDown = (
+    <NavLink
+      activeClassName={styles.Active}
+      to="/posts/create"
+      className = "d-block d-sm-none"
+    >
+      <i className="far fa-plus-square "></i>Add post
+    </NavLink>
+  );
     return (
       <>
         <NavLink
@@ -25,6 +36,7 @@ class LoggedInNavIcons extends Component {
         <NavLink to={`/profiles/${currentUser?.profile_id}`}>
           <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
         </NavLink>
+        {addPostIconDropDown}
       </>
     );
   }

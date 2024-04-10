@@ -41,9 +41,9 @@ const NavBar = ({ showAlert }) => {
     <NavLink
       activeClassName={styles.Active}
       to="/posts/create"
-      className = "mr-auto"
+      className = "mr-auto mr-auto pr-5 d-sm-inline d-none"
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="far fa-plus-square "></i>Add post
     </NavLink>
   );
 
@@ -57,10 +57,24 @@ const NavBar = ({ showAlert }) => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="58" />
+            {/* logo for above small screens */}
+            <img
+              src={logo}
+              alt="logo"
+              height="58"
+              className="d-none d-sm-block"
+            />
+            {
+              /* logo for small screens and below */ }
+            <img
+              src={logo}
+              alt="logo"
+              height="45"
+              className="d-block d-sm-none"
+            />
           </Navbar.Brand>
         </NavLink>
-        <NavLink className="mr-auto pr-5 d-sm-inline d-none" to="/">
+        <NavLink className="mr-auto pr-5 d-sm-inline" to="/">
           STRONGEST
           <br />
           AVENGER
