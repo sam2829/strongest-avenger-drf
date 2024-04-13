@@ -64,6 +64,7 @@ DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
+    '8000-sam2829-strongestavenge-igozhq1ys7p.ws-eu110.gitpod.io',
     'localhost',
 ]
 
@@ -112,9 +113,9 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    os.environ.get('CLIENT_ORIGIN')
-]
+# CORS_ALLOWED_ORIGINS = [
+#     os.environ.get('CLIENT_ORIGIN')
+# ]
 
 ROOT_URLCONF = 'strongest_avenger_drf_api.urls'
 

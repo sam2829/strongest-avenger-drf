@@ -25,7 +25,7 @@ class CommentList(generics.ListCreateAPIView):
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    this class is to be able to retirve comment by id,
+    this class is to be able to retrieve comment by id,
     update and delete comment
     """
     serializer_class = CommentDetailSerializer
