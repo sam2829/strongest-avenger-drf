@@ -153,7 +153,7 @@ const PostCreateForm = ({ showAlert }) => {
                 className={`${btnStyles.Button} ${styles.PostButton}`}
                 type="submit"
               >
-                save
+                post
               </Button>
               <Button
                 className={`${btnStyles.Button} ${styles.PostButton}`}
