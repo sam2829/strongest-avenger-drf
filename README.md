@@ -109,7 +109,11 @@ An entity relationship diagram was created using drawSQL to show the schemas for
 | /likes/:id | GET | Retrieve like by id | DETAIL |
 | /likes/:id | DELETE | Delete like by id | DETAIL |
 | `Report Endpoints` |
+| /report | GET | List of all reports of that owner | LIST |
 | /report | POST | Create a new report | LIST |
+| /report/:id | GET | Retrieve a report by id if owner | DETAIL |
+| /report/:id | PUT | Edit / update a report by id if owner | DETAIL |
+| /report/:id | DELETE | Delete a report by id if owner | DETAIL |
 
 [back to top](#strongest-avenger-drf-api)
 
