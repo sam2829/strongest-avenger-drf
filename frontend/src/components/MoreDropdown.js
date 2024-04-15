@@ -77,6 +77,14 @@ export function ProfileEditDropdown({ id }) {
           <i className="fas fa-key" />
           change password
         </Dropdown.Item>
+        <Dropdown.Item
+          onClick={() => history.push(`/report/`)}
+          aria-label="my-reports"
+          className={styles.ProfileDropdownItem}
+        >
+          <i className="fa-solid fa-circle-exclamation" />
+          my reports
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );
