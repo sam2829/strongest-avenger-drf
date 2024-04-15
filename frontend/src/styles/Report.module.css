@@ -1,0 +1,17 @@
+.Tick {
+    color: #ffac00;
+    font-size: 30px;
+}
+
+.Cross {
+    color: #8a00c2;
+    font-size: 30px;
+}
+
+.ReportInfo {
+    color: #ffac00;
+}
+
+.ReportData {
+    color: #8a00c2;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styles from "../../styles/ReportsPage.module.css"
 import appStyles from "../../App.module.css";
 import NoResultsImg from "../../assets/no-results.png";
 import Container from "react-bootstrap/Container";
@@ -7,6 +8,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/UseRedirect";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import Report from "../report/Report"
 
 const ReportsPage = ( message ) => {
 
@@ -27,18 +29,11 @@ const ReportsPage = ( message ) => {
           data
         } = await axiosReq.get(`/report/`);
           setReports(data);
-          console.log(data)
           setHasLoaded(true);
       } catch (err) {
         console.log(err);
         }
     };
-
-    const isOwner = reports.results.every(report => report.owner === currentUser.username);
-
-    if (!isOwner) {
-      history.push("/");
-    }
 
     setHasLoaded(false);
     const timer = setTimeout(() => {
@@ -68,22 +63,14 @@ const ReportsPage = ( message ) => {
     // Display the list of reports
   } else {
 
-    reportsContent = reports.results.map((report, index) => (
-      <Container className={appStyles.Content} key={index}>
-        <p>ID: {report.id}</p>
-        <p>Owner: {report.owner}</p>
-        <p>Post: {report.post}</p>
-        <p>Created At: {report.created_at}</p>
-        <p>Reason: {report.reason}</p>
-        <p>Description: {report.description}</p>
-        {report.resolved ? <p>Resolved: True</p> : <p>Resolved: False</p>}
-      </Container>
+    reportsContent = reports.results.map((report) => (
+      <Report key={report.id} {...report} setReports={setReports} />
     ));
   }
 
   return (
     <>
-      <div>My Reports</div>
+      <h1 className='mt-3'>My Reports</h1>
       <div>{reportsContent}</div>
     </>
 
