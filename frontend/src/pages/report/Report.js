@@ -4,11 +4,44 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Report.module.css"
+import { MoreDropdown } from "../../components/MoreDropdown";
+import { useHistory } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Report = (report) => {
 
+  const currentUser = useCurrentUser();
+  const isOwner = currentUser ?.username === report.owner;
+  const history = useHistory();
+
+  // Function to edit report
+  const handleEdit = () => {
+    history.push(`/report/${report.id}/edit`);
+  };
+
+  // function to delete report
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/report/${report.id}/`);
+      history.goBack();
+    } catch (err) {
+      // console.log(err);
+    }
+  };
+
   return (
     <Container className={appStyles.Content}>
+      <div className="ml-auto mt-2 d-flex align-items-center">
+        {isOwner && !report.resolved && (
+          <div className="ml-auto">
+            <MoreDropdown
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            />
+          </div>
+        )}
+      </div>
       <Row className ='text-center my-4'>
         <Col lg={6}>
           <p className={styles.ReportInfo}>ID:</p>
