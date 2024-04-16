@@ -16,7 +16,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const MoreDropdown = ({ handleEdit, handleDelete }) => {
+export const MoreDropdown = ({ handleEdit, handleDelete, resolved }) => {
   return (
     <Dropdown className={`${styles.DropdownItem} ml-auto px-2`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -25,13 +25,18 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
         className={styles.DropdownMenu}
         popperConfig={{ strategy: "fixed" }}
       >
-        <Dropdown.Item
-          className={styles.DropdownItem}
-          onClick={handleEdit}
-          aria-label="edit"
-        >
-          <i className="fa-solid fa-pen-to-square" />
-        </Dropdown.Item>
+        {/* When viewing reports, user can only edit if the report
+        has not been resolved */}
+        {!resolved && (
+          <Dropdown.Item
+            className={styles.DropdownItem}
+            onClick={handleEdit}
+            aria-label="edit"
+          >
+            <i className="fa-solid fa-pen-to-square" />
+          </Dropdown.Item>
+        )}
+        
         <Dropdown.Item
           className={styles.DropdownItem}
           onClick={handleDelete}

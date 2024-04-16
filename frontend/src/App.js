@@ -109,7 +109,11 @@ function App() {
           <Route
             exact
             path="/report/"
-            render={() => <ReportsPage />}
+            render={() => (
+              <ReportsPage
+                message="You currently have no reports to view."
+              />
+            )}
           />
           <Route
             exact

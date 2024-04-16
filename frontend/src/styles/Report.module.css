@@ -1,3 +1,15 @@
+.Row {
+    border-bottom: 1px solid #8a00c2;
+    padding: 8px;
+}
+
+.Heading {
+    text-align: center;
+    font-size: 1.8rem;
+    padding-left: 12px;
+    color: #8a00c2;
+}
+
 .Tick {
     color: #ffac00;
     font-size: 30px;
@@ -14,4 +26,15 @@
 
 .ReportData {
     color: #8a00c2;
+}
+
+/* Styles for reports for small screen sizes */
+
+@media (max-width: 576px) {
+
+    /* Adjust heading font size for small screens */
+    .Heading {
+        font-size: 1.2rem;
+    }
+
 }

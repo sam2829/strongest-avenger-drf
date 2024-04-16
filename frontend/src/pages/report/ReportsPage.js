@@ -10,7 +10,7 @@ import { useRedirect } from "../../hooks/UseRedirect";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Report from "../report/Report"
 
-const ReportsPage = ( message ) => {
+const ReportsPage = ( { message } ) => {
 
   const [reports, setReports] = useState({
       results: []
