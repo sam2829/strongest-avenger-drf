@@ -9,6 +9,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/UseRedirect";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Report from "../report/Report"
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 const ReportsPage = ( { message } ) => {
 
@@ -67,7 +69,7 @@ const ReportsPage = ( { message } ) => {
     if (report.owner === currentUser.username) {
       return <Report key={report.id} {...report} setReports={setReports} />;
     } else {
-      history.push("/")
+      return null;
     }
   });
 }
@@ -75,7 +77,14 @@ const ReportsPage = ( { message } ) => {
   return (
     <>
       <h1 className={`${styles.Heading} mt-3`}>My Reports</h1>
-      <div>{reportsContent}</div>
+      {/* Infinite scrolling for reports */}
+      <InfiniteScroll
+        children={reportsContent}
+        loader={<Asset spinner />}
+        dataLength={reports.results.length}
+        hasMore={!!reports.next}
+        next={() => fetchMoreData(reports, setReports)}
+      />
     </>
 
   )
