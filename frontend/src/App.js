@@ -20,6 +20,7 @@ import CreateReportForm from "./pages/report/CreateReportForm";
 import { setTokenTimestamp } from "./utils/utils";
 import NotFound from "./components/NotFound";
 import ReportsPage from "./pages/report/ReportsPage";
+import ReportEditForm from "./pages/report/ReportEditForm";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
@@ -119,6 +120,11 @@ function App() {
             exact
             path="/report/:id/"
             render={() => <CreateReportForm showAlert={showAlert} />}
+          />
+          <Route 
+            exact
+            path="/report/:id/edit"
+            render={() => <ReportEditForm showAlert={showAlert} />}
           />
           <Route
             exact

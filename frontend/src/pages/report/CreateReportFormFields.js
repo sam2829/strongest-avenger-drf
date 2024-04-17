@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-import styles from "../../styles/CreateReportForm.module.css";
+import styles from "../../styles/CreateEditReportForm.module.css";
 
 const CreateReportFormFields = ({
   reason,

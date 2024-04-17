@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
@@ -19,8 +19,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/UseRedirect";
 import CreateReportFormFields from "./CreateReportFormFields";
 
-// Component to render the report form
-const CreateReportForm = ({ showAlert }) => {
+// Component to render the report edit form
+const ReportEditForm = ({ showAlert }) => {
   // Redirect hook to redirect users is logged out
   useRedirect("loggedOut");
   // handle errors on the post form
@@ -46,13 +46,40 @@ const CreateReportForm = ({ showAlert }) => {
     });
   };
 
-  // Handle submit of create report form
+  // On load, retrieve existing report data
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        // Fetch the report data from the server
+        const { data } = await axiosReq.get(`/report/${id}/`);
+        const { owner, resolved, reason, description } = data;
+
+        // Check if the current user is the owner and the report is not resolved
+        if (currentUser?.username === owner && !resolved) {
+          setReportData({ owner, reason, description });
+        } else {
+          // Redirect the user if they are not the owner or the report is resolved
+          history.push("/");
+        }
+      } catch (err) {
+        // Redirect the user if an error occurs
+        history.push("/");
+      }
+    };
+    handleMount();
+  }, [currentUser, history, id]);
+
+  // Handle submit of report edit form
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("reason", reason);
+    formData.append("description", description);
     try {
       // Send report data to the server
-      await axiosReq.post("/report/", reportData);
-      showAlert("success", "Report submitted successfully.");
+      await axiosReq.put(`/report/${id}/`, formData);
+      showAlert("success", "Report edited successfully.");
       history.goBack();
     } catch (err) {
       // console.log("Server Error:", err.response.data);
@@ -71,18 +98,18 @@ const CreateReportForm = ({ showAlert }) => {
                 <img src={logo} alt="logo" height="40" />
               </Col>
               <Col xs="8">
-                <h1 className={styles.Heading}>Report</h1>
+                <h1 className={styles.Heading}>Report Edit</h1>
               </Col>
             </Row>
           </Container>
         </Col>
       </Row>
-      {/*  create report form */}
+      {/* report edit form */}
       <Form onSubmit={handleSubmit} encType="multipart/form-data">
         <Row className="p-4 justify content center">
           <Col md={{ span: 10, offset: 1 }}>
             <Container className={styles.FormFields}>
-              {/* Create report form fields */}
+              {/* report edit form fields */}
               <CreateReportFormFields
                 reason={reason}
                 description={description}
@@ -94,7 +121,7 @@ const CreateReportForm = ({ showAlert }) => {
                 className={`${btnStyles.Button} ${styles.ReportButton}`}
                 type="submit"
               >
-                submit
+                save
               </Button>
               <Button
                 className={`${btnStyles.Button} ${styles.ReportButton}`}
@@ -110,4 +137,4 @@ const CreateReportForm = ({ showAlert }) => {
   );
 };
 
-export default CreateReportForm;
+export default ReportEditForm;
