@@ -24,12 +24,12 @@ const ReportsPage = ( { message } ) => {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        // Function to fetch posts data from the server
+        // Function to fetch reports data from the server
         const {
           data
         } = await axiosReq.get(`/report/`);
-          setReports(data);
-          setHasLoaded(true);
+        setReports(data);
+        setHasLoaded(true);
       } catch (err) {
         console.log(err);
         }
@@ -62,15 +62,19 @@ const ReportsPage = ( { message } ) => {
     );
     // Display the list of reports
   } else {
-
-    reportsContent = reports.results.map((report) => (
-      <Report key={report.id} {...report} setReports={setReports} />
-    ));
-  }
+    reportsContent = reports.results.map((report) => {
+    // Check if the current user is the owner of the report
+    if (report.owner === currentUser.username) {
+      return <Report key={report.id} {...report} setReports={setReports} />;
+    } else {
+      history.push("/")
+    }
+  });
+}
 
   return (
     <>
-      <h1 className='mt-3'>My Reports</h1>
+      <h1 className={`${styles.Heading} mt-3`}>My Reports</h1>
       <div>{reportsContent}</div>
     </>
 
