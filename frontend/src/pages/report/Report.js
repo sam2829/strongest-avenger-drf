@@ -43,6 +43,7 @@ const Report = (report) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/report/${report.id}/`);
+      showAlert("success", "Report deleted successfully.");
       window.location.reload();
     } catch (err) {
       // console.log(err);
