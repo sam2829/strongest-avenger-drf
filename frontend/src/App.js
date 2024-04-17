@@ -113,6 +113,7 @@ function App() {
             render={() => (
               <ReportsPage
                 message="You currently have no reports to view."
+                showAlert={showAlert}
               />
             )}
           />

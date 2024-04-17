@@ -12,7 +12,7 @@ import Report from "../report/Report"
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
-const ReportsPage = ( { message } ) => {
+const ReportsPage = ( { message, showAlert } ) => {
 
   const [reports, setReports] = useState({
       results: []
@@ -67,7 +67,12 @@ const ReportsPage = ( { message } ) => {
     reportsContent = reports.results.map((report) => {
     // Check if the current user is the owner of the report
     if (report.owner === currentUser.username) {
-      return <Report key={report.id} {...report} setReports={setReports} />;
+      return <Report 
+        key={report.id}
+        report={report} 
+        showAlert={showAlert}
+        setReports={setReports}
+      />;
     } else {
       return null;
     }

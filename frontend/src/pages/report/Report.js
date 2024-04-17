@@ -11,7 +11,11 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
 // Report function to display the report and function
-const Report = (report) => {
+const Report = ({
+    report,
+    showAlert,
+    setReports
+  }) => {
 
   // Get currrent user
   const currentUser = useCurrentUser();
@@ -43,8 +47,12 @@ const Report = (report) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/report/${report.id}/`);
+      // update the reports
+      setReports((prevReports) => ({
+        ...prevReports,
+        results: prevReports.results.filter((rep) => rep.id !== report.id)
+      }));
       showAlert("success", "Report deleted successfully.");
-      window.location.reload();
     } catch (err) {
       // console.log(err);
     }
