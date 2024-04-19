@@ -50,4 +50,3 @@ class ReportDetail(generics.RetrieveUpdateDestroyAPIView):
         else:
             # Return empty queryset for unauthenticated users
             return Report.objects.none()
-
