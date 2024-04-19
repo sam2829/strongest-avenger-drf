@@ -67,7 +67,7 @@ The model also makes sure that a user can not like the same post twice.
 ***Report***
 
 The Report model is linked to the User mode by foreign key using a one-to-many relationship so that any reports can be linked back to a specific user and their profile.
-The Report model is also linked to the post Post model by foreign key using a one-to-many relationship to so that any reports can be linked back to the post with the issue.
+The Report model is also linked to the Post model by foreign key using a one-to-many relationship to so that any reports can be linked back to the post with the issue.
 In the Report model the user will also be provided a select options for the reason for the report and a description to explain.
 There is also a Boolean field top select whether the issue has been resolved, this is strictly for admin to select once they have resolved the issue.
 
