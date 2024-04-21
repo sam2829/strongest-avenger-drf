@@ -113,9 +113,9 @@ MIDDLEWARE = [
 ]
 
 
-# CORS_ALLOWED_ORIGINS = [
-#     os.environ.get('CLIENT_ORIGIN')
-# ]
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN')
+]
 
 ROOT_URLCONF = 'strongest_avenger_drf_api.urls'
 
