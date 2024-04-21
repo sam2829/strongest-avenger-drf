@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from strongest_avenger_drf_api.permissions import IsOwnerOrReadOnly
 from .models import Report
 from django_filters.rest_framework import DjangoFilterBackend
 from .serializers import ReportSerializer, ReportDetailSerializer
@@ -38,7 +39,7 @@ class ReportDetail(generics.RetrieveUpdateDestroyAPIView):
     update and delete comment
     """
     serializer_class = ReportDetailSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Report.objects.all()
 
     def get_queryset(self):

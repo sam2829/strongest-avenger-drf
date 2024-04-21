@@ -8,6 +8,7 @@ import PostLikeIcon from "./PostLikeIcon";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 
+
 // Post component to display a single post
 const Post = (props) => {
   // Destructure props to access post data
@@ -33,7 +34,7 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-
+  
   // Function to edit post
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);

@@ -20,19 +20,20 @@ class CommentListViewTests(APITestCase):
     # test list of comments are displayed
     def test_can_list_comments(self):
         sam = User.objects.get(username='sam')
+        self.client.login(username='sam', password='pass')
         Comment.objects.create(
             owner=sam,
             post=self.post,
             content='test content'
         )
-        response = self.client.get('/comments/')
+        response = self.client.get('/api/comments/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # test logged in user can create a comment
     def test_logged_in_user_can_create_comment(self):
         self.client.login(username='sam', password='pass')
         response = self.client.post(
-            '/comments/',
+            '/api/comments/',
             {
                 'post': self.post.id,
                 'content': 'test content',
@@ -45,7 +46,7 @@ class CommentListViewTests(APITestCase):
     # test a logged out user cannot create a comment
     def test_logged_out_user_cannot_create_comment(self):
         response = self.client.post(
-            '/comments/',
+            '/api/comments/',
             {
                 'post': self.post.id,
                 'content': 'test content',
@@ -85,20 +86,20 @@ class CommentDetailViewTests(APITestCase):
 
     # test that user can retrieve single comment by id
     def test_can_retrieve_comment_detail(self):
-        response = self.client.get(f'/comments/1/')
+        response = self.client.get(f'/api/comments/1/')
         self.assertEqual(response.data['content'], 'Test Comment by Sam')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # test user cannot retrieve a comment with invalid id
     def test_cannot_retrieve_comment_detail_using_invalid_id(self):
-        response = self.client.get(f'/comments/23/')
+        response = self.client.get(f'/api/comments/23/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     # test that user can update a comment
     def test_logged_in_user_can_update_comment(self):
         self.client.login(username='sam', password='pass')
         response = self.client.put(
-            '/comments/1/',
+            '/api/comments/1/',
             {
                 'content': 'update content',
             }
@@ -111,7 +112,7 @@ class CommentDetailViewTests(APITestCase):
     def test_logged_in_user_cannot_update_anothers_comment(self):
         self.client.login(username='sam', password='pass')
         response = self.client.put(
-            '/comments/2/',
+            '/api/comments/2/',
             {
                 'content': 'update content',
             }
@@ -122,7 +123,7 @@ class CommentDetailViewTests(APITestCase):
     # test that user cannot update comment logged out
     def test_logged_out_user_cannot_update_comment(self):
         response = self.client.put(
-            f'/comments/1/',
+            f'/api/comments/1/',
             {
                 'content': 'update content',
             }
@@ -133,25 +134,25 @@ class CommentDetailViewTests(APITestCase):
     # test that user can delete a comment
     def test_logged_in_user_can_delete_comment(self):
         self.client.login(username='sam', password='pass')
-        response = self.client.delete(f'/posts/1/')
+        response = self.client.delete(f'/api/posts/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     # test that user cannot delete someone elses comment
     def test_unauthorized_user_cannot_delete_comment(self):
         self.client.login(username='sam', password='pass')
-        response = self.client.delete(f'/posts/2/')
+        response = self.client.delete(f'/api/posts/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     # test that user cannot delete a comment logged out
     def test_logged_out_user_cannot_delete_comment(self):
-        response = self.client.delete(f'/posts/2/')
+        response = self.client.delete(f'/api/posts/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     # test invalid data in comment is not accepted
     def test_invalid_post_comment(self):
         self.client.login(username='sam', password='pass')
         response = self.client.post(
-            '/comments/',
+            '/api/comments/',
             {
                 'content': '',
             }

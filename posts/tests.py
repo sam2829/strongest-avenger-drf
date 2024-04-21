@@ -19,7 +19,7 @@ class PostListViewTests(APITestCase):
     def test_can_list_posts(self):
         sam = User.objects.get(username='sam')
         Posts.objects.create(owner=sam, title='test title')
-        response = self.client.get('/posts/')
+        response = self.client.get('/api/posts/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # create a image for testing
@@ -36,7 +36,7 @@ class PostListViewTests(APITestCase):
         self.client.login(username='sam', password='pass')
         image = self.generate_image()
         response = self.client.post(
-            '/posts/',
+            '/api/posts/',
             {
                 'title': 'test title',
                 'character_name': 'test character',
@@ -53,7 +53,7 @@ class PostListViewTests(APITestCase):
     def test_logged_out_user_cannot_create_post(self):
         image = self.generate_image()
         response = self.client.post(
-            '/posts/',
+            '/api/posts/',
             {
                 'title': 'test title',
                 'character_name': 'test character',
@@ -95,13 +95,13 @@ class PostDetailViewTests(APITestCase):
 
     # test that user can retrieve single post by id
     def test_can_retrieve_post_detail(self):
-        response = self.client.get(f'/posts/1/')
+        response = self.client.get(f'/api/posts/1/')
         self.assertEqual(response.data['title'], 'test title')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # test user cannot retrieve a post with invalid id
     def test_cannot_retrieve_post_detail_using_invalid_id(self):
-        response = self.client.get(f'/posts/23/')
+        response = self.client.get(f'/api/posts/23/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     # test that user can update a post
@@ -109,7 +109,7 @@ class PostDetailViewTests(APITestCase):
         image = self.generate_image()
         self.client.login(username='sam', password='pass')
         response = self.client.put(
-            '/posts/1/',
+            '/api/posts/1/',
             {
                 'title': 'updated title',
                 'character_name': 'test character',
@@ -127,7 +127,7 @@ class PostDetailViewTests(APITestCase):
         image = self.generate_image()
         self.client.login(username='sam', password='pass')
         response = self.client.put(
-            '/posts/2/',
+            '/api/posts/2/',
             {
                 'title': 'updated title',
                 'character_name': 'test character',
@@ -143,7 +143,7 @@ class PostDetailViewTests(APITestCase):
     def test_logged_out_user_cannot_update_post(self):
         image = self.generate_image()
         response = self.client.put(
-            f'/posts/1/',
+            f'/api/posts/1/',
             {
                 'title': 'updated title',
                 'character_name': 'test character',
@@ -158,18 +158,18 @@ class PostDetailViewTests(APITestCase):
     # test that user can delete a post
     def test_logged_in_user_can_delete_post(self):
         self.client.login(username='sam', password='pass')
-        response = self.client.delete(f'/posts/1/')
+        response = self.client.delete(f'/api/posts/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     # test that user cannot delete someone elses post
     def test_unauthorized_user_cannot_delete_post(self):
         self.client.login(username='sam', password='pass')
-        response = self.client.delete(f'/posts/2/')
+        response = self.client.delete(f'/api/posts/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     # test that user cannot delete a post logged out
     def test_logged_out_user_cannot_delete_post(self):
-        response = self.client.delete(f'/posts/2/')
+        response = self.client.delete(f'/api/posts/2/')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
     # test invalid data in post is not accepted
@@ -177,7 +177,7 @@ class PostDetailViewTests(APITestCase):
         self.client.login(username='sam', password='pass')
         image = self.generate_image()
         response = self.client.post(
-            '/posts/',
+            '/api/posts/',
             {
                 'title': 'updated title',
                 'character_name': 'test character',
