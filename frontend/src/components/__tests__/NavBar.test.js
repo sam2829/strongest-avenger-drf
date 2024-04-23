@@ -2,7 +2,6 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "../../contexts/CurrentUserContext";
 import NavBar from "../NavBar";
-import { act } from 'react-dom/test-utils';
 
 // Mock showAlert function
 const showAlert = jest.fn();
@@ -73,7 +72,7 @@ test("renders Sign in and Sign up buttons again on log out", async () => {
 
 });
 
-// // test home navigation link navigates to correct page
+// test home navigation link navigates to correct page
 test("home navigation link navigates to correct page", () => {
   render(
     <Router>

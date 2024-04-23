@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import SignUpForm from "../SignUpForm";
 
 // Test the Sign up form renders
-test("renders Sign in form", async () => {
+test("renders Sign up form", async () => {
   render(
     <Router>
       <SignUpForm />

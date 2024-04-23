@@ -28,6 +28,7 @@ test("redirects to home page if already logged in", () => {
 
   // Ensure that user is redirected to the home page
   expect(screen.queryByText("Sign in")).not.toBeInTheDocument();
+  expect(window.location.pathname).toBe("/");
 });
 
 // test username field changes value
