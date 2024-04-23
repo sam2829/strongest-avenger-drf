@@ -6,7 +6,7 @@ import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import AlertMessage, { useAlert } from "./components/AlertMessage";
-import React from "react";
+import React, { useEffect }from "react";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
@@ -21,9 +21,24 @@ import { setTokenTimestamp } from "./utils/utils";
 import NotFound from "./components/NotFound";
 import ReportsPage from "./pages/report/ReportsPage";
 import ReportEditForm from "./pages/report/ReportEditForm";
+import { useHistory } from "react-router-dom";
 
 function App() {
   const { alert, showAlert, hideAlert } = useAlert();
+  const history = useHistory();
+
+  // Added to reset scroll position on page when opening new page
+  useEffect(() => {
+    // Reset scroll position when the component mounts
+    const unlisten = history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+
+    // Cleanup function to remove the listener when the component unmounts
+    return () => {
+      unlisten();
+    };
+  }, [history]);
 
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
