@@ -1,21 +1,21 @@
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import CommentCreateForm from "../CommentCreateForm";
+import CommentEditForm from "../CommentEditForm";
 import { CurrentUserProvider } from "../../../contexts/CurrentUserContext";
 
-// Test the comment create form renders
-test("renders comment create form", async () => {
+// Test the comment edit form renders
+test("renders comment edit form", async () => {
   await act(async () => {
     render(
       <Router>
         <CurrentUserProvider >
-          <CommentCreateForm />
+          <CommentEditForm />
         </CurrentUserProvider>
       </Router>
     );
   });
 
-  // Wait for the element with placeholder text "post" to appear
+  // Wait for the element with placeholder text "my comment..." to appear
   await waitFor(() => {
     expect(screen.getByPlaceholderText("my comment...")).toBeInTheDocument();
   });
@@ -26,7 +26,7 @@ test("comment field changes", () => {
   render(
     <Router>
       <CurrentUserProvider >
-        <CommentCreateForm />
+        <CommentEditForm />
       </CurrentUserProvider>
     </Router>
   );
