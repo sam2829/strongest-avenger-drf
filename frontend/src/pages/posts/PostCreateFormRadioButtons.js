@@ -23,6 +23,7 @@ const PostCreateFormRadioButtons = ({ mediaType, handleChange }) => {
             checked={mediaType === "Image"}
             onChange={handleChange}
             className={styles.RadioButtons}
+            id="image-radio"
           />
         </Col>
 
@@ -35,6 +36,7 @@ const PostCreateFormRadioButtons = ({ mediaType, handleChange }) => {
             checked={mediaType === "Video"}
             onChange={handleChange}
             className={styles.RadioButtons}
+            id="video-radio"
           />
         </Col>
       </Row>
