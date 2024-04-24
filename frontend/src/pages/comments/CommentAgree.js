@@ -22,6 +22,7 @@ const CommentAgree = ({ agree, setAgree }) => {
               className="fa-solid fa-circle-check"
               data-value={agree}
               onClick={handleAgree}
+              data-testid="agree-icon"
             ></i>
           </OverlayTrigger>
         </div>
@@ -37,6 +38,7 @@ const CommentAgree = ({ agree, setAgree }) => {
               className="fa-regular fa-circle-check"
               data-value={agree}
               onClick={handleAgree}
+              data-testid="disagree-icon"
             ></i>
           </OverlayTrigger>
         </div>
