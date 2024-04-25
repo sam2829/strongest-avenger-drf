@@ -46,6 +46,7 @@ const CreateReportFormFields = ({
           value={description}
           onChange={handleChange}
           className={styles.ReportInput}
+          data-testid="description"
         />
       </Form.Group>
       {/* Display error messages for the description field, if any */}
