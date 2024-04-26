@@ -82,7 +82,8 @@ class PostsSerializer(serializers.ModelSerializer):
                     )
             except Exception as e:
                 raise serializers.ValidationError(
-                    'Error processing the video file.'
+                    'Error processing the video file. '
+                    'Make sure Video is less than two minutes.'
                 )
 
         return value

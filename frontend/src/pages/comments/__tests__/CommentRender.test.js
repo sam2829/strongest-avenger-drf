@@ -1,7 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import CommentRender from "../CommentRender";
-import { CurrentUserProvider } from "../../../contexts/CurrentUserContext";
 
 // Mock comments data
 const comments = {

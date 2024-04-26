@@ -34,7 +34,7 @@ test("renders link to the user profile for a logged in user", async () => {
   expect(profileAvatar).toBeInTheDocument();
 
   // Checking if the "Sign in" text is NOT present
-  const signInText = await screen.queryByText("Sign in");
+  const signInText = screen.queryByText("Sign in");
   expect(signInText).not.toBeInTheDocument();
 });
 

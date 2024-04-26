@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Asset from "../Asset";
-import { Spinner } from "react-bootstrap";
 
 // Test the Asset renders
 test("renders Asset", () => {

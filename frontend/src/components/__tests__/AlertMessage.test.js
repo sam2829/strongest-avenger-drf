@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, act } from "@testing-library/react"; // Import act
+import { render, act } from "@testing-library/react"; // Import act
 import { BrowserRouter as Router } from "react-router-dom";
 import AlertMessage from "../AlertMessage";
 

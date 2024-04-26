@@ -37,6 +37,6 @@ test("comment field changes", () => {
   // Simulate typing in the comment field
   fireEvent.change(commentInput, { target: { value: "testuser" } });
 
-  // Assert that the value of the username field has been updated
+  // Assert that the value of the comment field has been updated
   expect(commentInput.value).toBe("testuser");
 });

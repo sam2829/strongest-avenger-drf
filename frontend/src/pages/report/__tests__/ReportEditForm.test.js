@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
+import { render, screen, waitFor, act } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import ReportEditForm from "../ReportEditForm";
 import { CurrentUserProvider } from "../../../contexts/CurrentUserContext";
