@@ -96,10 +96,10 @@ const PostCreateForm = ({ showAlert }) => {
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
-        // console.log("Server Error:", err.response.data);
+        console.log("Server Error:", err.response.data);
         setErrors(err.response.data);
       } else {
-        // console.log("Network Error:", err.message);
+        console.log("Network Error:", err.message);
       }
     }
   };
