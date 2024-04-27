@@ -76,14 +76,14 @@ class PostsSerializer(serializers.ModelSerializer):
                 video_clip = VideoFileClip(value.temporary_file_path())
                 duration = video_clip.duration
 
-                if duration > 120:
+                if duration > 60:
                     raise serializers.ValidationError(
-                        'Video duration should be less than 120 seconds.'
+                        'Video duration should be less than 60 seconds.'
                     )
             except Exception as e:
                 raise serializers.ValidationError(
                     'Error processing the video file. '
-                    'Make sure Video is less than two minutes.'
+                    'Make sure Video is less than 60 seconds.'
                 )
 
         return value
