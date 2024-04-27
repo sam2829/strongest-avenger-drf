@@ -99,7 +99,8 @@ const PostCreateForm = ({ showAlert }) => {
         console.log("Server Error:", err.response.data);
         setErrors(err.response.data);
       } else {
-        console.log("Network Error:", err.message);
+        console.log("Network Error:", err.message.data);
+        showAlert("success", err.message.data);
       }
     }
   };
