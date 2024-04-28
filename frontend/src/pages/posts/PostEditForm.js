@@ -225,7 +225,7 @@ const PostEditForm = ({ showAlert }) => {
                     className={`${btnStyles.Button} ${styles.PostButton}`}
                     type="submit"
                   >
-                    post
+                    save
                   </Button>
                   <Button
                     className={`${btnStyles.Button} ${styles.PostButton}`}
