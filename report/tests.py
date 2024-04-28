@@ -11,7 +11,9 @@ class ProfileListViewTests(APITestCase):
     """
     # setup logged in user
     def setUp(self):
-        self.sam = User.objects.create_user(username='sam_profile', password='pass')
+        self.sam = User.objects.create_user(
+            username='sam_profile', password='pass'
+        )
         self.post = Posts.objects.create(
             owner=self.sam,
             title='test title'
@@ -62,8 +64,12 @@ class ReportDetailViewTests(APITestCase):
     this class is for testing the Report Detail views
     """
     def setUp(self):
-        self.sam = User.objects.create_user(username='sam_report', password='pass')
-        self.emma = User.objects.create_user(username='emma_report', password='pass')
+        self.sam = User.objects.create_user(
+            username='sam_report', password='pass'
+        )
+        self.emma = User.objects.create_user(
+            username='emma_report', password='pass'
+        )
         self.post = Posts.objects.create(
             owner=self.sam,
             title='test title'
@@ -130,7 +136,7 @@ class ReportDetailViewTests(APITestCase):
         response = self.client.delete(f'/api/report/1/')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-     # test that user cannot delete another users report
+    # test that user cannot delete another users report
     def test_logged_in_user_cannot_delete_another_users_report(self):
         self.client.login(username='sam_report', password='pass')
         response = self.client.delete(f'/api/report/2/')
