@@ -17,6 +17,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import PostCreateFormImageField from "./PostCreateFormImageField";
 import PostCreateFormVideoField from "./PostCreateFormVideoField";
 import PostCreateFormRadioButtons from "./PostCreateFormRadioButtons";
+import Asset from "../../components/Asset";
 
 // Component to render post edit form
 const PostEditForm = ({ showAlert }) => {
@@ -47,6 +48,9 @@ const PostEditForm = ({ showAlert }) => {
   const videoInput = useRef(null);
   const history = useHistory();
   const { id } = useParams();
+
+  // User knows when form is being submitted
+  const [submittingForm, setSubmittingForm] = useState(false);
 
   // on load retrieve existing post data
   useEffect(() => {
@@ -113,6 +117,9 @@ const PostEditForm = ({ showAlert }) => {
     event.preventDefault();
     const formData = new FormData();
 
+    setSubmittingForm(true);
+
+
     formData.append("title", title);
     formData.append("character_name", characterName);
     formData.append("character_category", characterCategory);
@@ -148,15 +155,19 @@ const PostEditForm = ({ showAlert }) => {
     try {
       await axiosReq.put(`/posts/${id}/`, formData);
       showAlert("success", `You have successfully changed your post`);
+      setSubmittingForm(false);
       history.push(`/posts/${id}`);
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
         // console.log("Server Error:", err.response.data);
         showAlert("danger", `There was an error with creating your post.`);
+        setSubmittingForm(false);
         setErrors(err.response.data);
       } else {
         // console.log("Network Error:", err.message);
+        showAlert("success", `Something went wrong. Please try again, also make sure video is under 60 seconds.`);
+        setSubmittingForm(false);
       }
     }
   };
@@ -207,18 +218,27 @@ const PostEditForm = ({ showAlert }) => {
                 handleChange={handleChange}
                 errors={errors}
               />
-              <Button
-                className={`${btnStyles.Button} ${styles.PostButton}`}
-                type="submit"
-              >
-                save
-              </Button>
-              <Button
-                className={`${btnStyles.Button} ${styles.PostButton}`}
-                onClick={() => history.goBack()}
-              >
-                cancel
-              </Button>
+              {/* Buttons to display on form when form isnt being submitted */}
+              {!submittingForm && (
+                <>
+                  <Button
+                    className={`${btnStyles.Button} ${styles.PostButton}`}
+                    type="submit"
+                  >
+                    post
+                  </Button>
+                  <Button
+                    className={`${btnStyles.Button} ${styles.PostButton}`}
+                    onClick={() => history.goBack()}
+                  >
+                    cancel
+                  </Button>
+                </>
+              )}
+              {/* spinner displayed instead of buttons when for submitting */}
+              {submittingForm && (
+                <Asset spinner />
+              )}
             </Container>
           </Col>
         </Row>

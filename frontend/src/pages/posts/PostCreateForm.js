@@ -98,11 +98,13 @@ const PostCreateForm = ({ showAlert }) => {
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       showAlert("success", `You have successfully created a post`);
+      setSubmittingForm(false);
       history.push(`/posts/${data.id}`);
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
         console.log("Server Error:", err.response.data);
+        showAlert("danger", `There was an error with creating your post.`);
         setErrors(err.response.data);
         setSubmittingForm(false);
       } else {
