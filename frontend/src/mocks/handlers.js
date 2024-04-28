@@ -1,6 +1,5 @@
 import { rest } from "msw";
 
-// const baseURL = "https://strongest-avenger-drf-api-c57eb1c3e676.herokuapp.com/";
 const baseURL = "/api";
 
 export const handlers = [

@@ -103,12 +103,12 @@ const PostCreateForm = ({ showAlert }) => {
     } catch (err) {
       if (err.response && err.response.data) {
         // Display the error message received from the server
-        console.log("Server Error:", err.response.data);
+        // console.log("Server Error:", err.response.data);
         showAlert("danger", `There was an error with creating your post.`);
         setErrors(err.response.data);
         setSubmittingForm(false);
       } else {
-        console.log("Network Error:", err.message);
+        // console.log("Network Error:", err.message);
         showAlert("success", `Something went wrong. Please try again, also make sure video is under 60 seconds.`);
         setSubmittingForm(false);
       }

@@ -5,6 +5,7 @@ import Asset from "./Asset";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
+// Component to render not found page
 const NotFound = () => {
   return (
     <Container className={styles.NotFoundContent}>
