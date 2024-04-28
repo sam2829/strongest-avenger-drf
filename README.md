@@ -133,8 +133,8 @@ An entity relationship diagram was created using drawSQL to show the schemas for
   - Cloudinary was used to store the images and videos posted.
 - Gitpod
   - Gitpod was used to write the code.
-- Github
-  - Github was used to store the projects code after being pushed from Gitpod.
+- GitHub
+  - GitHub was used to store the projects code after being pushed from Gitpod.
 - Heroku
   - Heroku was used for deployment.
 - DrawSQL
@@ -147,7 +147,7 @@ An entity relationship diagram was created using drawSQL to show the schemas for
 - Django rest auth - Provides REST API endpoints for login and logout.
 - django rest framework-simplejwt - Used for JSON web token authentication.
 - psychopg2 - Database adapter to enable interaction between Python and PostgreSQL database.
-- django cors headers - This Django app adds CORS headers to responses, to enable the API to respond to requests from origins other than it's own host.
+- django cors headers - This Django app adds CORS headers to responses, to enable the API to respond to requests from origins other than its own host.
 - Cloudinary - Used to store images and videos.
 - Pillow - Used for image processing.
 - Django Signal - Used to create a profile every time a user is created.
@@ -217,7 +217,7 @@ For deployment to Heroku the following steps were made:
   - Once you have clicked on "create app" you will be taken to a new page. On this page you will see a row of tabs at the top left of the page. You first need to click on the "settings" tab and go to the settings page.
   - Login into your ElephantSQL account and create a new instance.
   - Next name your project and select the tiny turtle plan, then click select region.
-  - Select the data center near to you then click review.
+  - Select the data centre near to you then click review.
   - Check the options you selected the click create instance.
   - Once ElephantSQL instance created, click on the instance created and there you will see the URL, which you can copy ready to be placed in the Heroku app.
   - You will also need to log into your Cloudinary account, there you can select the dashboard option. In there you will see your Cloudinary URL, you will also need this for the Heroku app. You can copy this by clicking on the eye symbol next to it.
